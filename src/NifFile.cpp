@@ -1382,9 +1382,9 @@ OptResult NifFile::OptimizeFor(OptOptions& options) {
 														   + static_cast<uint32_t>(triangles.size()) * 3;
 							bsOptShape->particleVerts = *vertices;
 
-							bsOptShape->particleNorms.resize(vertices->size(), Vector3(1.0f, 0.0f, 0.0f));
-							if (normals && normals->size() == vertices->size())
+							if (normals)
 								bsOptShape->particleNorms = *normals;
+							bsOptShape->particleNorms.resize(vertices->size(), Vector3(1.0f, 0.0f, 0.0f));
 
 							bsOptShape->particleTris = triangles;
 						}
